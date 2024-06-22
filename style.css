@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
+    width: 100vw;
 }
 .roboto-regular {
     font-family: "Roboto", sans-serif;
