@@ -2,7 +2,6 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
-    width: 100vw;
 }
 .roboto-regular {
     font-family: "Roboto", sans-serif;
@@ -13,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 10px;
 }
 h1{
     font-size: 50px;

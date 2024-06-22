@@ -4,7 +4,7 @@ let started = false;
 let level = 0;
 let h2=document.querySelector('h2');
 let btns=['red','green','yellow','purple'];
-
+let para=document.querySelector('.instructions');
 
 let start=document.querySelector(".start");
 start.addEventListener('click',function(){
@@ -17,6 +17,7 @@ start.addEventListener('click',function(){
         for(let btn of allBtns){
             btn.classList.remove('disabled');
         }
+        para.style.display='none';
     }
 });
 function userFlash(btn){
@@ -51,7 +52,12 @@ function ansCheck(idx){
             setTimeout(levelUp,500);
         }
     }else{
-        h2.innerText="Game Over. Press the start button to play again.";
+        h2.innerHTML=`Game Over. <span style="color:green;">Score = ${level-1} </span> <br>Press the start button to play again.`;
+        let body=document.querySelector('body');
+        body.style.backgroundColor='red';
+        setTimeout(function(){
+            body.style.backgroundColor='white';
+        },500);
         resetGame();
     }
 }
@@ -77,4 +83,5 @@ function resetGame() {
     for (let btn of allBtns) {
         btn.classList.add('disabled');
     }
+    para.style.display='block';
 }
